@@ -36,14 +36,14 @@ const Contact = () => {
     <section id="contact" className="min-h-screen flex items-center justify-center bg-background py-20">
       <div className="max-w-6xl w-full px-6 md:px-10">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 reveal">
           <h2 className="text-5xl md:text-6xl font-semibold mb-8 text-foreground">Contact</h2>
           <div className="w-32 h-[2px] bg-foreground mx-auto"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* LEFT SIDE - Contact Info & Social */}
-          <div className="space-y-12">
+          <div className="space-y-12 reveal-left">
             {/* Email */}
             <div>
               <h3 className="text-xl md:text-2xl font-semibold mb-4 text-primary">Email Me</h3>
@@ -98,7 +98,7 @@ const Contact = () => {
           </div>
 
           {/* RIGHT SIDE - Contact Form */}
-          <div className="bg-card/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-border">
+          <div className="bg-card/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-border reveal-right">
             <h3 className="text-xl md:text-2xl font-semibold mb-6 text-foreground">Send Me a Message</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -176,7 +176,7 @@ const Contact = () => {
         </div>
 
         {/* Footer Text */}
-        <div className="text-center mt-20 text-muted-foreground">
+        <div className="text-center mt-20 text-muted-foreground reveal">
           <p className="text-sm">Let's build something amazing together</p>
         </div>
       </div>

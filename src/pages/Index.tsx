@@ -7,11 +7,16 @@ import About from "@/components/portfolio/About";
 import Projects from "@/components/portfolio/Projects";
 import Education from "@/components/portfolio/Education";
 import TechStack from "@/components/portfolio/TechStack";
+import Certifications from "@/components/portfolio/Certifications";
 import Contact from "@/components/portfolio/Contact";
+import useScrollReveal from "@/hooks/useScrollReveal";
 import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
   const [introComplete, setIntroComplete] = useState(false);
+
+  // Initialize scroll reveal animations
+  useScrollReveal();
 
   useEffect(() => {
     if (introComplete) {
@@ -27,6 +32,29 @@ const Index = () => {
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
+
+      // Re-initialize scroll reveal after intro completes
+      setTimeout(() => {
+        const revealElements = document.querySelectorAll(
+          ".reveal, .reveal-left, .reveal-right, .reveal-scale"
+        );
+        
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px",
+          }
+        );
+
+        revealElements.forEach((el) => observer.observe(el));
+      }, 100);
 
       return () => {
         lenis.destroy();
@@ -46,6 +74,7 @@ const Index = () => {
         <Projects />
         <Education />
         <TechStack />
+        <Certifications />
         <Contact />
       </main>
       

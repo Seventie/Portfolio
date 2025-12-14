@@ -23,6 +23,7 @@ const Header = ({ visible }: HeaderProps) => {
     { label: "Projects", href: "#projects" },
     { label: "Education", href: "#education" },
     { label: "Tech Stack", href: "#techstack" },
+    { label: "Certifications", href: "#certifications" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -31,13 +32,13 @@ const Header = ({ visible }: HeaderProps) => {
   return (
     <>
       {/* Navigation Menu - Desktop */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 h-20 bg-background/95 backdrop-blur-md border-b border-border/50 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''}`}>
-        <div className="h-full flex items-center justify-center gap-12 max-w-7xl mx-auto px-6">
+      <nav className={`fixed top-0 left-0 right-0 z-50 h-20 bg-background/95 backdrop-blur-md border-b border-border/30 transition-all duration-300 ${scrolled ? 'shadow-sm' : ''}`}>
+        <div className="h-full flex items-center justify-center gap-8 lg:gap-12 max-w-7xl mx-auto px-6">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="text-foreground/70 hover:text-foreground text-lg font-light relative py-2 transition-opacity duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full hidden md:block"
+              className="text-foreground/60 hover:text-foreground text-base lg:text-lg font-light relative py-2 transition-all duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full hidden md:block"
             >
               {item.label}
             </a>
@@ -62,7 +63,7 @@ const Header = ({ visible }: HeaderProps) => {
               key={item.label}
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
-              className="text-foreground text-2xl font-light"
+              className="text-foreground text-2xl font-light hover:text-muted-foreground transition-colors"
             >
               {item.label}
             </a>

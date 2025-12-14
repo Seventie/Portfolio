@@ -70,15 +70,18 @@ const About = () => {
     <section id="about" className="min-h-screen flex items-center justify-center bg-background py-20">
       <div className="max-w-7xl w-full px-6 md:px-10">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 reveal">
           <h2 className="text-5xl md:text-6xl font-semibold mb-8 text-foreground">Meet Me</h2>
           <div className="w-32 h-[2px] bg-foreground mx-auto"></div>
         </div>
 
         {/* Skills Icons */}
         <div className="flex justify-center gap-8 md:gap-16 mb-24 flex-wrap">
-          {skills.map((skill) => (
-            <div key={skill.name} className="flex flex-col items-center group cursor-pointer">
+          {skills.map((skill, index) => (
+            <div 
+              key={skill.name} 
+              className={`reveal stagger-${index + 1} flex flex-col items-center group cursor-pointer`}
+            >
               <div className="icon-glow mb-4 text-foreground">
                 {skill.icon}
               </div>
@@ -92,14 +95,14 @@ const About = () => {
         {/* Three Column Text */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Column 1 */}
-          <div className="text-foreground md:text-right">
+          <div className="text-foreground md:text-right reveal-left">
             <h3 className="text-xl md:text-2xl font-semibold mb-6 leading-relaxed">
               Hello, I'm Sattar, an ML & AI Engineer in the making — working with ML, DL, NLP, and Computer Vision while exploring cloud, full-stack development, Docker, and Kubernetes to build scalable digital experiences.
             </h3>
           </div>
 
           {/* Column 2 */}
-          <div className="text-muted-foreground">
+          <div className="text-muted-foreground reveal">
             <h4 className="text-xl md:text-2xl font-semibold mb-6 text-foreground">My Journey</h4>
             <p className="text-base leading-relaxed">
               I grew up fascinated by how things work — breaking gadgets, opening stuff I wasn't supposed to open, exploring physics videos, and diving into weird facts about the universe. I like figuring out the "why" behind things. That naturally pushed me toward computer science. It's the perfect mix of logic, math, creativity, and problem-solving — and it's where I feel most at home now, especially with ML and AI.
@@ -107,7 +110,7 @@ const About = () => {
           </div>
 
           {/* Column 3 */}
-          <div className="text-muted-foreground">
+          <div className="text-muted-foreground reveal-right">
             <h4 className="text-xl md:text-2xl font-semibold mb-6 text-foreground">What Drives Me</h4>
             <p className="text-base leading-relaxed">
               I'm driven by curiosity — the constant urge to understand more, explore deeper, and push beyond what I already know. Learning new skills and refining the ones I have is something I genuinely enjoy, because every step forward opens up new possibilities. A big part of my motivation also comes from wanting to build a stronger future for myself and for the people who invest their trust in me.
