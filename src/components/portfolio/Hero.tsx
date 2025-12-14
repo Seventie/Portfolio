@@ -16,7 +16,7 @@ const Hero = () => {
           isHovered ? 'scale-110' : 'scale-100'
         }`}>
           <img
-            src="/Profile.png"
+            src="Profile.png"
             alt="Sattar"
             className={`w-full h-full object-cover transition-all duration-700 ${
               isHovered ? 'grayscale' : 'grayscale-0'
