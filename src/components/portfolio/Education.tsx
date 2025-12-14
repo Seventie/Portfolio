@@ -58,20 +58,20 @@ const Education = () => {
     <section id="education" className="min-h-screen flex items-center justify-center bg-background py-20">
       <div className="max-w-7xl w-full px-6 md:px-10">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 reveal">
           <h2 className="text-5xl md:text-6xl font-semibold mb-8 text-foreground">Education & Achievements</h2>
           <div className="w-32 h-[2px] bg-foreground mx-auto"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Academic Journey */}
-          <div className="space-y-8 md:space-y-12">
+          <div className="space-y-8 md:space-y-12 reveal-left">
             <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-primary">Academic Journey</h3>
 
             {academicJourney.map((item, index) => (
               <div
                 key={index}
-                className="border-l-2 border-border pl-6 relative py-4 hover:-translate-y-0.5 hover:scale-[1.01] transition-all duration-300 hover:shadow-lg"
+                className={`reveal stagger-${index + 1} border-l-2 border-border pl-6 relative py-4 hover:-translate-y-0.5 hover:scale-[1.01] transition-all duration-300 hover:shadow-md`}
               >
                 <div className={`absolute -left-[9px] top-4 w-4 h-4 rounded-full ${item.highlight ? 'bg-primary' : 'bg-foreground'}`}></div>
                 <p className="text-sm font-light text-muted-foreground mb-2">{item.year}</p>
@@ -85,13 +85,13 @@ const Education = () => {
           </div>
 
           {/* Sports & Leadership */}
-          <div className="space-y-8 md:space-y-12">
+          <div className="space-y-8 md:space-y-12 reveal-right">
             <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-accent">Sports & Leadership</h3>
 
             {sportsLeadership.map((item, index) => (
               <div
                 key={index}
-                className="border-l-2 border-accent/30 pl-6 relative py-4 hover:-translate-y-0.5 hover:scale-[1.01] transition-all duration-300 hover:shadow-lg"
+                className={`reveal stagger-${index + 1} border-l-2 border-accent/30 pl-6 relative py-4 hover:-translate-y-0.5 hover:scale-[1.01] transition-all duration-300 hover:shadow-md`}
               >
                 <div className={`absolute -left-[9px] top-4 w-4 h-4 rounded-full ${item.highlight ? 'bg-accent' : 'bg-foreground'}`}></div>
                 <p className="text-sm text-muted-foreground mb-2">{item.year}</p>

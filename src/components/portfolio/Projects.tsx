@@ -60,7 +60,7 @@ const Projects = () => {
   return (
     <section id="projects" className="min-h-screen flex flex-col items-center bg-background py-20">
       {/* Header */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-16 reveal">
         <h2 className="text-5xl md:text-6xl font-semibold mb-6 text-foreground">Projects</h2>
         <div className="w-32 h-[2px] bg-foreground mx-auto"></div>
       </div>
@@ -68,10 +68,10 @@ const Projects = () => {
       {!selectedProject ? (
         /* Projects Grid */
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full max-w-5xl px-6 md:px-10">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <div
               key={project.id}
-              className="p-8 md:p-10 text-center cursor-pointer border-b border-border hover:-translate-y-1 transition-all duration-300"
+              className={`reveal stagger-${(index % 5) + 1} p-8 md:p-10 text-center cursor-pointer border-b border-border hover:-translate-y-1 transition-all duration-300`}
               onClick={() => setSelectedProject(project)}
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
@@ -89,7 +89,7 @@ const Projects = () => {
         </div>
       ) : (
         /* Project Detail View */
-        <div className="w-full max-w-4xl px-6 md:px-10 mt-10 text-center">
+        <div className="w-full max-w-4xl px-6 md:px-10 mt-10 text-center reveal">
           <h3 className="text-4xl md:text-5xl font-semibold mb-6 text-foreground">{selectedProject.title}</h3>
           <p className="text-lg text-muted-foreground leading-relaxed mb-10">{selectedProject.description}</p>
 

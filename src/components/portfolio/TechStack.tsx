@@ -21,15 +21,18 @@ const TechStack = () => {
     <section id="techstack" className="min-h-screen flex items-center justify-center bg-background py-20">
       <div className="max-w-4xl w-full px-6 md:px-10">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 reveal">
           <h2 className="text-5xl md:text-6xl font-semibold mb-8 text-foreground">Tech Stack</h2>
           <div className="w-32 h-[2px] bg-foreground mx-auto"></div>
         </div>
 
         {/* Stack Grid */}
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-8 md:gap-12">
-          {technologies.map((tech) => (
-            <div key={tech.name} className="flex flex-col items-center group cursor-pointer">
+          {technologies.map((tech, index) => (
+            <div 
+              key={tech.name} 
+              className={`reveal stagger-${(index % 5) + 1} flex flex-col items-center group cursor-pointer`}
+            >
               <div className="icon-glow text-foreground mb-3">
                 {tech.icon === "custom-ml" ? (
                   <svg className="w-12 h-12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -49,9 +52,6 @@ const TechStack = () => {
           ))}
         </div>
       </div>
-
-      {/* DevIcons CDN */}
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     </section>
   );
 };
