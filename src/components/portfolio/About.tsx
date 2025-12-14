@@ -97,7 +97,7 @@ const About = () => {
           {/* Column 1 */}
           <div className="text-foreground md:text-right reveal-left">
             <h3 className="text-xl md:text-2xl font-semibold mb-6 leading-relaxed">
-              Hello, I'm Sattar, an ML & AI Engineer in the making — working with ML, DL, NLP, and Computer Vision while exploring cloud, full-stack development, Docker, and Kubernetes to build scalable digital experiences.
+              Hello, I'm Sattar, an ML & AI Engineer in the making — working with deep learning, computer vision, NLP, and generative AI while exploring agentic systems, RAG architectures, and research-driven approaches to build intelligent, impactful solutions.
             </h3>
           </div>
 

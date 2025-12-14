@@ -1,40 +1,19 @@
 const Certifications = () => {
   const certifications = [
     {
-      name: "AWS Solutions Architect",
-      issuer: "Amazon Web Services",
-      year: "2024",
-      credentialId: "AWS-SAA-XXXXX",
+      name: "Machine Learning Specialization",
+      issuer: "Stanford Online",
+      year: "2025",
     },
     {
-      name: "Google Cloud Professional",
-      issuer: "Google Cloud",
-      year: "2024",
-      credentialId: "GCP-PRO-XXXXX",
+      name: "Deep Learning Specialization",
+      issuer: "DeepLearning.AI",
+      year: "2025",
     },
     {
-      name: "Meta Frontend Developer",
-      issuer: "Meta",
-      year: "2023",
-      credentialId: "META-FE-XXXXX",
-    },
-    {
-      name: "MongoDB Developer Associate",
-      issuer: "MongoDB Inc.",
-      year: "2023",
-      credentialId: "MDB-DEV-XXXXX",
-    },
-    {
-      name: "TensorFlow Developer",
-      issuer: "Google",
-      year: "2024",
-      credentialId: "TF-DEV-XXXXX",
-    },
-    {
-      name: "Docker Certified Associate",
-      issuer: "Docker Inc.",
-      year: "2024",
-      credentialId: "DCA-XXXXX",
+      name: "AWS Cloud Practitioner Essentials",
+      issuer: "AWS Skill Builder",
+      year: "2025",
     },
   ];
 
@@ -65,15 +44,9 @@ const Certifications = () => {
                   {cert.name}
                 </h3>
                 
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground">
                   {cert.issuer}
                 </p>
-                
-                <div className="mt-auto pt-4 border-t border-border">
-                  <p className="text-xs text-muted-foreground font-mono">
-                    ID: {cert.credentialId}
-                  </p>
-                </div>
               </div>
             </div>
           ))}

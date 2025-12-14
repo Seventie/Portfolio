@@ -1,47 +1,38 @@
+import { useState } from "react";
+
 const Hero = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden">
-      {/* Gemstone SVG */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[500px] md:w-[600px] md:h-[675px] pointer-events-none reveal-scale">
-        <svg
-          viewBox="0 0 200 280"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
-          style={{ filter: 'grayscale(1) opacity(0.9)' }}
-        >
-          {/* Crystal/Gem shape */}
-          <polygon
-            points="100,0 180,80 160,280 40,280 20,80"
-            fill="hsl(var(--foreground))"
-            opacity="0.9"
+    <section id="hero" className="min-h-screen flex flex-col items-center justify-center bg-background relative overflow-hidden">
+      {/* Profile Image Container */}
+      <div 
+        className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] cursor-pointer mb-8"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {/* Image with effects */}
+        <div className={`w-full h-full rounded-full overflow-hidden transition-all duration-700 ease-in-out ${
+          isHovered ? 'scale-110' : 'scale-100'
+        }`}>
+          <img
+            src="/Profile.png"
+            alt="Sattar"
+            className={`w-full h-full object-cover transition-all duration-700 ${
+              isHovered ? 'grayscale' : 'grayscale-0'
+            }`}
           />
-          <polygon
-            points="100,0 180,80 100,100"
-            fill="hsl(var(--foreground))"
-            opacity="0.7"
-          />
-          <polygon
-            points="100,0 20,80 100,100"
-            fill="hsl(var(--foreground))"
-            opacity="0.5"
-          />
-          <polygon
-            points="100,100 180,80 160,280 100,260"
-            fill="hsl(var(--foreground))"
-            opacity="0.8"
-          />
-          <polygon
-            points="100,100 20,80 40,280 100,260"
-            fill="hsl(var(--foreground))"
-            opacity="0.6"
-          />
-          <polygon
-            points="100,260 40,280 160,280"
-            fill="hsl(var(--foreground))"
-            opacity="0.4"
-          />
-        </svg>
+        </div>
+      </div>
+
+      {/* Name and Title */}
+      <div className="text-center">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-4 tracking-tight">
+          SHAIK ABDUS SATTAR
+        </h1>
+        <p className="text-lg md:text-xl text-muted-foreground tracking-wider uppercase">
+          ML / AI Engineer
+        </p>
       </div>
     </section>
   );

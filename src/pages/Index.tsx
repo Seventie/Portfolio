@@ -11,6 +11,7 @@ import Certifications from "@/components/portfolio/Certifications";
 import Contact from "@/components/portfolio/Contact";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import { Toaster } from "@/components/ui/toaster";
+import Research from "@/components/portfolio/Research";
 
 const Index = () => {
   const [introComplete, setIntroComplete] = useState(false);
@@ -71,6 +72,7 @@ const Index = () => {
       <main>
         <Hero />
         <About />
+        <Research />
         <Projects />
         <Education />
         <TechStack />

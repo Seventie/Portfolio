@@ -12,12 +12,12 @@ const Education = () => {
       title: "Intermediate (11th & 12th)",
       institution: "Excellencia Junior College, Hyderabad",
       description: "981/1000 in State Board | 95.87 Percentile in JEE Mains | AIR 270 in AEEE",
-      highlight: true,
+      highlight: false,
     },
     {
       year: "2011 - 2021",
       title: "Primary & Secondary",
-      institution: "Village School, Local",
+      institution: "Vasavi VidyaNikethan , Cumbum",
       description: "Built strong fundamentals & curiosity for tech.",
       highlight: false,
     },
@@ -27,7 +27,7 @@ const Education = () => {
     {
       year: "2025",
       title: "Head Coordinator of CSE Department",
-      institution: "Gokulashtami 2024, Amrita",
+      institution: "Gokulashtami 2025, Amrita",
       description: "Led CSE department for tech & cultural events.",
       highlight: false,
     },
@@ -36,7 +36,7 @@ const Education = () => {
       title: "Western Group Music Winner",
       institution: "Amrita Vishwa Vidyapeetham",
       description: "Won first place in Western Group Music.",
-      highlight: true,
+      highlight: false,
     },
     {
       year: "2021 - 2023",
