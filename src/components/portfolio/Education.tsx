@@ -1,112 +1,105 @@
 const Education = () => {
-  const education = [
+  const academicJourney = [
     {
-      degree: "Master of Computer Science",
-      institution: "Your University",
-      year: "2020 - 2022",
-      description: "Specialized in Software Engineering and Distributed Systems",
+      year: "2023 - Present",
+      title: "B.Tech CSE",
+      institution: "Amrita Vishwa Vidyapeetham",
+      description: "Paving my path into the tech verse.",
+      highlight: false,
     },
     {
-      degree: "Bachelor of Technology",
-      institution: "Your College",
-      year: "2016 - 2020",
-      description: "Major in Computer Science with honors",
+      year: "2021 - 2023",
+      title: "Intermediate (11th & 12th)",
+      institution: "Excellencia Junior College, Hyderabad",
+      description: "981/1000 in State Board | 95.87 Percentile in JEE Mains | AIR 270 in AEEE",
+      highlight: true,
+    },
+    {
+      year: "2011 - 2021",
+      title: "Primary & Secondary",
+      institution: "Village School, Local",
+      description: "Built strong fundamentals & curiosity for tech.",
+      highlight: false,
     },
   ];
 
-  const achievements = [
-    { title: "Best Developer Award", organization: "Tech Conference 2023", description: "Recognized for outstanding contributions" },
-    { title: "Open Source Contributor", organization: "Major Framework", description: "Top 100 contributors worldwide" },
-    { title: "Hackathon Winner", organization: "National Hackathon 2022", description: "First place in innovation category" },
-    { title: "Certified Cloud Architect", organization: "AWS", description: "Professional level certification" },
-  ];
-
-  const certifications = [
-    { name: "AWS Solutions Architect", issuer: "Amazon Web Services" },
-    { name: "Google Cloud Professional", issuer: "Google" },
-    { name: "Meta Frontend Developer", issuer: "Meta" },
-    { name: "MongoDB Developer", issuer: "MongoDB Inc." },
+  const sportsLeadership = [
+    {
+      year: "2025",
+      title: "Head Coordinator of CSE Department",
+      institution: "Gokulashtami 2024, Amrita",
+      description: "Led CSE department for tech & cultural events.",
+      highlight: false,
+    },
+    {
+      year: "2025",
+      title: "Western Group Music Winner",
+      institution: "Amrita Vishwa Vidyapeetham",
+      description: "Won first place in Western Group Music.",
+      highlight: true,
+    },
+    {
+      year: "2021 - 2023",
+      title: "Music Enthusiast & Football",
+      institution: "Intermediate Years",
+      description: "Actively participated in music and football.",
+      highlight: false,
+    },
+    {
+      year: "2017 - 2020",
+      title: "Athletics",
+      institution: "School Years",
+      description: "Active participant in school athletics.",
+      highlight: false,
+    },
   ];
 
   return (
-    <section id="education" className="py-24 md:py-32 px-6 bg-secondary/30">
-      <div className="container mx-auto max-w-6xl">
-        {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="font-display text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
-            Background
-          </h2>
-          <h3 className="font-display text-3xl md:text-4xl text-foreground">
-            Education & Achievements
-          </h3>
+    <section id="education" className="min-h-screen flex items-center justify-center bg-background py-20">
+      <div className="max-w-7xl w-full px-6 md:px-10">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-semibold mb-8 text-foreground">Education & Achievements</h2>
+          <div className="w-32 h-[2px] bg-foreground mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16">
-          {/* Education */}
-          <div>
-            <h4 className="font-display text-xl mb-8 text-foreground border-b border-border pb-4">
-              Education
-            </h4>
-            <div className="space-y-8">
-              {education.map((edu, index) => (
-                <div key={index} className="group">
-                  <p className="font-body text-xs tracking-wider uppercase text-muted-foreground mb-2">
-                    {edu.year}
-                  </p>
-                  <h5 className="font-display text-lg text-foreground mb-1 group-hover:text-muted-foreground transition-colors">
-                    {edu.degree}
-                  </h5>
-                  <p className="font-body text-sm text-muted-foreground italic mb-2">
-                    {edu.institution}
-                  </p>
-                  <p className="font-body text-sm text-muted-foreground">
-                    {edu.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          {/* Academic Journey */}
+          <div className="space-y-8 md:space-y-12">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-primary">Academic Journey</h3>
+
+            {academicJourney.map((item, index) => (
+              <div
+                key={index}
+                className="border-l-2 border-border pl-6 relative py-4 hover:-translate-y-0.5 hover:scale-[1.01] transition-all duration-300 hover:shadow-lg"
+              >
+                <div className={`absolute -left-[9px] top-4 w-4 h-4 rounded-full ${item.highlight ? 'bg-primary' : 'bg-foreground'}`}></div>
+                <p className="text-sm font-light text-muted-foreground mb-2">{item.year}</p>
+                <h4 className={`text-xl md:text-2xl font-semibold mb-2 ${item.highlight ? 'text-primary' : 'text-foreground'}`}>
+                  {item.title}
+                </h4>
+                <p className="text-base md:text-lg text-muted-foreground mb-2">{item.institution}</p>
+                <p className="text-sm text-muted-foreground/70 leading-relaxed">{item.description}</p>
+              </div>
+            ))}
           </div>
 
-          {/* Achievements */}
-          <div>
-            <h4 className="font-display text-xl mb-8 text-foreground border-b border-border pb-4">
-              Achievements
-            </h4>
-            <div className="space-y-6">
-              {achievements.map((achievement, index) => (
-                <div key={index} className="group flex gap-4">
-                  <div className="w-1 bg-foreground/20 group-hover:bg-foreground transition-colors flex-shrink-0" />
-                  <div>
-                    <h5 className="font-display text-base text-foreground mb-1">
-                      {achievement.title}
-                    </h5>
-                    <p className="font-body text-xs tracking-wider uppercase text-muted-foreground">
-                      {achievement.organization}
-                    </p>
-                    <p className="font-body text-sm text-muted-foreground mt-1">
-                      {achievement.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+          {/* Sports & Leadership */}
+          <div className="space-y-8 md:space-y-12">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-accent">Sports & Leadership</h3>
 
-        {/* Certifications */}
-        <div className="mt-16">
-          <h4 className="font-display text-xl mb-8 text-foreground border-b border-border pb-4">
-            Certifications
-          </h4>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {certifications.map((cert, index) => (
-              <div key={index} className="group p-6 bg-card border border-border hover:border-foreground transition-colors">
-                <h5 className="font-display text-sm text-foreground mb-2">
-                  {cert.name}
-                </h5>
-                <p className="font-body text-xs text-muted-foreground">
-                  {cert.issuer}
-                </p>
+            {sportsLeadership.map((item, index) => (
+              <div
+                key={index}
+                className="border-l-2 border-accent/30 pl-6 relative py-4 hover:-translate-y-0.5 hover:scale-[1.01] transition-all duration-300 hover:shadow-lg"
+              >
+                <div className={`absolute -left-[9px] top-4 w-4 h-4 rounded-full ${item.highlight ? 'bg-accent' : 'bg-foreground'}`}></div>
+                <p className="text-sm text-muted-foreground mb-2">{item.year}</p>
+                <h4 className={`text-xl md:text-2xl font-semibold mb-2 ${item.highlight ? 'text-accent' : 'text-foreground'}`}>
+                  {item.title}
+                </h4>
+                <p className="text-base md:text-lg text-muted-foreground">{item.institution}</p>
+                <p className="text-sm text-muted-foreground/70 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>

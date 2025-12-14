@@ -1,69 +1,75 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-const Header = () => {
+interface HeaderProps {
+  visible: boolean;
+}
+
+const Header = ({ visible }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
+    { label: "Home", href: "#hero" },
     { label: "About", href: "#about" },
+    { label: "Projects", href: "#projects" },
     { label: "Education", href: "#education" },
     { label: "Tech Stack", href: "#techstack" },
     { label: "Contact", href: "#contact" },
   ];
 
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
-      <nav className="container mx-auto px-6 py-6 flex items-center justify-between">
-        <a 
-          href="#" 
-          className="font-display text-xl tracking-[0.3em] uppercase font-medium text-foreground hover:text-muted-foreground transition-colors"
-        >
-          Portfolio
-        </a>
+  if (!visible) return null;
 
-        {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-8">
+  return (
+    <>
+      {/* Navigation Menu - Desktop */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 h-20 bg-background/95 backdrop-blur-md border-b border-border/50 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''}`}>
+        <div className="h-full flex items-center justify-center gap-12 max-w-7xl mx-auto px-6">
           {navItems.map((item) => (
-            <li key={item.label}>
-              <a
-                href={item.href}
-                className="font-body text-sm tracking-wider uppercase text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {item.label}
-              </a>
-            </li>
+            <a
+              key={item.label}
+              href={item.href}
+              className="text-foreground/70 hover:text-foreground text-lg font-light relative py-2 transition-opacity duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full hidden md:block"
+            >
+              {item.label}
+            </a>
           ))}
-        </ul>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden fixed top-6 right-6 z-[100] p-2 text-foreground"
           aria-label="Toggle menu"
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </nav>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-t border-border">
-          <ul className="container mx-auto px-6 py-6 flex flex-col gap-4">
-            {navItems.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block font-body text-sm tracking-wider uppercase text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+        <div className="md:hidden fixed inset-0 bg-background z-[90] flex flex-col items-center justify-center gap-8">
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={() => setIsMenuOpen(false)}
+              className="text-foreground text-2xl font-light"
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
       )}
-    </header>
+    </>
   );
 };
 
