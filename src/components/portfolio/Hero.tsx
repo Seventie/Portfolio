@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import ProfileImage from "./Profile.png";
 const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -16,8 +16,8 @@ const Hero = () => {
           isHovered ? 'scale-110' : 'scale-100'
         }`}>
           <img
-            src="Profile.png"
-            alt="Sattar"
+            src= {ProfileImage}
+            alt="Shaik Abdus Sattar"
             className={`w-full h-full object-cover transition-all duration-700 ${
               isHovered ? 'grayscale' : 'grayscale-0'
             }`}
