@@ -20,7 +20,7 @@ const Projects = () => {
       category: "Research Project",
       description: "Working with Dr. T. Ramraj on formulating a mathematically rigorous framework for 3D molecular similarity using full geometric structure. Investigating limitations in existing 2D and 3D kernel methods and designing a scalable, higher-fidelity 3D representation to reduce future computational complexity.",
       technologies: "Computational Chemistry, 3D Geometry, Kernel Methods",
-      repoUrl: "https://github.com/seventie",
+      repoUrl: "https://github.com/Seventie/Efficient-3D-Kernels-",
     },
     {
       id: 2,
@@ -28,7 +28,7 @@ const Projects = () => {
       category: "Computer Vision",
       description: "Built a PyTorch CNN for the HASYv2 dataset with full preprocessing, augmentation, and model optimization. Experimented with BatchNorm, adaptive pooling, and multi-layer fully connected architectures to improve accuracy. Achieved top performance and won a university-level Machine Learning competition.",
       technologies: "PyTorch, CNN, Image Processing",
-      repoUrl: "https://github.com/seventie",
+      repoUrl: "https://github.com/Seventie/HASYv2-Hand-Digit-Recognition",
     },
     {
       id: 3,
@@ -36,7 +36,7 @@ const Projects = () => {
       category: "Financial ML",
       description: "Developed a financial time-series model to detect market reversal points using engineered cross-ticker and temporal features. Handled imbalance and applied time-aware ensemble validation to separate true reversals from market noise. Produced a robust signal extraction pipeline capable of filtering volatile market behavior.",
       technologies: "PyTorch, LSTM, RNN, Feature Engineering, Time-Series Modeling",
-      repoUrl: "https://github.com/seventie",
+      repoUrl: "https://github.com/Seventie/US-Equity-Reversals---Kaggle-Competition-",
     },
     {
       id: 4,
@@ -44,7 +44,7 @@ const Projects = () => {
       category: "Medical AI",
       description: "Extracted dense feature vectors and trained ML classifiers for MRI tumor pattern recognition. Fine-tuned AlexNet, GoogLeNet, and VGG architectures for tumor classification. Achieved strong performance with deep transfer learning on MRI datasets.",
       technologies: "Computer Vision, Transfer Learning, Deep Learning",
-      repoUrl: "https://github.com/seventie",
+      repoUrl: "https://github.com/Seventie/BrainTumor-Classification---Computer-Vision",
     },
     {
       id: 5,
@@ -52,15 +52,15 @@ const Projects = () => {
       category: "NLP & RAG",
       description: "Developed a biomedical NER and query understanding pipeline using Transformer models. Integrated into a RAG-based web system for generating context-aware medical insights. Built custom biomedical NLP model achieving high entity recognition accuracy.",
       technologies: "NLP, RAG, Transformers, Named Entity Recognition",
-      repoUrl: "https://github.com/seventie",
+      repoUrl: "https://github.com/Seventie/MedAssistant---Your-Doorstep-Doctor-",
     },
     {
       id: 6,
-      title: "MindHaven",
-      category: "Healthcare Platform",
-      description: "Built a privacy-first mental-health platform using LLMs, agentic workflows, and RAG with anonymized user identities. Implemented crisis detection, safe response generation, and personalized emotional assistance with alerts for clinicians and guardians. Developed clinician-facing summaries with consent-based access control and strong privacy, encryption, and PII protection.",
-      technologies: "LLMs, RAG, Full-Stack, Privacy Engineering",
-      repoUrl: "https://github.com/seventie",
+      title: "adviceGuide",
+      category: "Carrer Assistant",
+      description: "Built a personalised longterm assistant for students or currently working professionals for them to shine brighter in their carrer it suggests jobs , makes roadmaps , designs ur daily life , listens to you , take custom interviews and get to accomplish your goal :->",
+      technologies: "LLMs, RAG, Full-Stack, Backend, LangGraph , LangChain, FastAPI",
+      repoUrl: "https://github.com/Seventie/Anokha-AiVerse",
     },
   ];
 
