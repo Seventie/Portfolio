@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ProfileImage from "./Profile.png";
+import ProfileImage from "@root/Profile.jpeg";
 const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
 
