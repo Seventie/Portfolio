@@ -3,11 +3,17 @@ const TechStack = () => {
     { name: "Python", icon: "devicon-python-plain", type: "devicon" },
     { name: "C++", icon: "devicon-cplusplus-plain", type: "devicon" },
     { name: "Java", icon: "devicon-java-plain", type: "devicon" },
-    { name: "MySQL", icon: "devicon-mysql-plain", type: "devicon" },
+    { name: "SQL", icon: "devicon-mysql-plain", type: "devicon" },
+    { name: "Haskell", icon: "devicon-haskell-plain", type: "devicon" },
     { name: "ML", icon: "ml", type: "custom" },
-    { name: "Deep Learning", icon: "devicon-tensorflow-original", type: "devicon" },
+    { name: "TensorFlow", icon: "devicon-tensorflow-original", type: "devicon" },
+    { name: "Deep Learning", icon: "deeplearning", type: "custom" },
     { name: "PyTorch", icon: "devicon-pytorch-original", type: "devicon" },
-    { name: "CV", icon: "devicon-opencv-plain", type: "devicon" },
+    { name: "CNNs", icon: "cnn", type: "custom" },
+    { name: "Transformers", icon: "transformer", type: "custom" },
+    { name: "NLP", icon: "nlp", type: "custom" },
+    { name: "Computer Vision", icon: "devicon-opencv-plain", type: "devicon" },
+    { name: "Time-Series Modeling", icon: "timeseries", type: "custom" },
     { name: "Generative AI", icon: "generative", type: "custom" },
     { name: "Agentic AI", icon: "agentic", type: "custom" },
     { name: "LLMs", icon: "llm", type: "custom" },
@@ -33,6 +39,39 @@ const TechStack = () => {
           <circle cx="3" cy="18" r="1.5" fill="currentColor" />
           <circle cx="12" cy="9" r="1.5" fill="currentColor" />
           <circle cx="21" cy="18" r="1.5" fill="currentColor" />
+        </svg>
+      ),
+      deeplearning: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <rect x="4" y="4" width="16" height="5" rx="1.5" />
+          <rect x="6" y="11" width="12" height="4" rx="1.5" />
+          <rect x="8" y="17" width="8" height="3" rx="1.2" />
+        </svg>
+      ),
+      cnn: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <circle cx="7" cy="7" r="2.2" />
+          <circle cx="17" cy="7" r="2.2" />
+          <circle cx="12" cy="16" r="2.2" />
+          <path strokeLinecap="round" d="M9.2 8.4l5.6 0M8.2 9.2l2.8 4.6M15.8 9.2l-2.8 4.6" />
+        </svg>
+      ),
+      transformer: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 6h14M5 12h14M5 18h14" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 4v16M15 4v16" />
+        </svg>
+      ),
+      nlp: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4 5h16v10H8l-4 4V5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 9h8M8 12h5" />
+        </svg>
+      ),
+      timeseries: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l5-6 4 3 5-7 4 3" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18" />
         </svg>
       ),
       generative: (

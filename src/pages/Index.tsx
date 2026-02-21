@@ -12,9 +12,12 @@ import Contact from "@/components/portfolio/Contact";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import { Toaster } from "@/components/ui/toaster";
 import Research from "@/components/portfolio/Research";
+import CursorGradient from "@/components/CursorGradient";
+import { useTheme } from "@/hooks/useTheme";
 
 const Index = () => {
   const [introComplete, setIntroComplete] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
 
   // Initialize scroll reveal animations
   useScrollReveal();
@@ -64,18 +67,24 @@ const Index = () => {
   }, [introComplete]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <CursorGradient />
+      
       {!introComplete && <IntroAnimation onComplete={() => setIntroComplete(true)} />}
       
-      <Header visible={introComplete} />
+      <Header visible={introComplete} isDark={isDark} onToggleTheme={toggleTheme} />
       
       <main>
-        <Hero />
-        <About />
+        <section className="bg-background px-6 md:px-10 pt-28 pb-16 md:pt-32 md:pb-20">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <Hero splitLayout />
+            <About splitLayout />
+          </div>
+        </section>
         <Research />
         <Projects />
-        <Education />
         <TechStack />
+        <Education />
         <Certifications />
         <Contact />
       </main>

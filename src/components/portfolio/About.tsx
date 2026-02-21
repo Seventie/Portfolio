@@ -1,7 +1,11 @@
-const About = () => {
+type AboutProps = {
+  splitLayout?: boolean;
+};
+
+const About = ({ splitLayout = false }: AboutProps) => {
   const skills = [
     {
-      name: "Machine Learning",
+      name: "ML",
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="24" r="4"></circle>
@@ -16,96 +20,114 @@ const About = () => {
       ),
     },
     {
-      name: "Cloud / DevOps",
+      name: "DL",
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M16 30h-2a6 6 0 010-12h1a9 9 0 0117-3 7 7 0 013 13h-2"></path>
-          <circle cx="24" cy="30" r="3"></circle>
-          <line x1="24" y1="33" x2="24" y2="42"></line>
-          <circle cx="24" cy="45" r="1"></circle>
+          <rect x="8" y="10" width="32" height="8" rx="2"></rect>
+          <rect x="12" y="22" width="24" height="8" rx="2"></rect>
+          <rect x="16" y="34" width="16" height="8" rx="2"></rect>
         </svg>
       ),
     },
     {
-      name: "Full-Stack",
+      name: "Computer Vision",
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="8" y="10" width="32" height="10" rx="2"></rect>
-          <rect x="8" y="22" width="32" height="10" rx="2"></rect>
-          <rect x="8" y="34" width="32" height="10" rx="2"></rect>
+          <path d="M4 24s7-10 20-10 20 10 20 10-7 10-20 10S4 24 4 24z"></path>
+          <circle cx="24" cy="24" r="5"></circle>
         </svg>
       ),
     },
     {
-      name: "DSA",
+      name: "NLP",
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="24" cy="10" r="3"></circle>
-          <circle cx="14" cy="24" r="3"></circle>
-          <circle cx="34" cy="24" r="3"></circle>
-          <circle cx="24" cy="38" r="3"></circle>
-          <line x1="24" y1="13" x2="14" y2="22"></line>
-          <line x1="24" y1="13" x2="34" y2="22"></line>
-          <line x1="24" y1="35" x2="14" y2="26"></line>
-          <line x1="24" y1="35" x2="34" y2="26"></line>
+          <path d="M8 10h32v20H20l-8 8v-8H8z"></path>
+          <line x1="16" y1="18" x2="32" y2="18"></line>
+          <line x1="16" y1="24" x2="28" y2="24"></line>
         </svg>
       ),
     },
     {
-      name: "Leadership",
+      name: "Fullstack",
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="24" cy="12" r="4"></circle>
-          <circle cx="14" cy="28" r="3"></circle>
-          <circle cx="34" cy="28" r="3"></circle>
-          <line x1="24" y1="16" x2="14" y2="25"></line>
-          <line x1="24" y1="16" x2="34" y2="25"></line>
-          <line x1="14" y1="31" x2="34" y2="31"></line>
+          <polyline points="16,18 10,24 16,30"></polyline>
+          <polyline points="32,18 38,24 32,30"></polyline>
+          <line x1="22" y1="34" x2="26" y2="14"></line>
+          <rect x="14" y="36" width="20" height="8" rx="2"></rect>
         </svg>
       ),
     },
   ];
 
-  return (
-    <section id="about" className="min-h-screen flex items-center justify-center bg-background py-20">
-      <div className="max-w-7xl w-full px-6 md:px-10">
-        {/* Header */}
-        <div className="text-center mb-20 reveal">
-          <h2 className="text-5xl md:text-6xl font-semibold mb-8 text-foreground">Meet Me</h2>
-          <div className="w-32 h-[2px] bg-foreground mx-auto"></div>
-        </div>
+  const sectionClass = splitLayout
+    ? "w-full"
+    : "min-h-screen flex items-center justify-center bg-background py-20";
+  const containerClass = splitLayout ? "w-full" : "max-w-7xl w-full px-6 md:px-10";
+  const skillsClass = splitLayout
+    ? "flex justify-start gap-6 md:gap-10 mb-12 flex-wrap"
+    : "flex justify-center gap-8 md:gap-16 mb-24 flex-wrap";
+  const textGridClass = splitLayout
+    ? "grid grid-cols-1 gap-6"
+    : "grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8";
+  const introTextClass = splitLayout
+    ? "text-foreground reveal-left"
+    : "text-foreground md:text-right reveal-left";
 
+  return (
+    <section id="about" className={sectionClass}>
+      <div className={containerClass}>
         {/* Skills Icons */}
-        <div className="flex justify-center gap-8 md:gap-16 mb-24 flex-wrap">
-          {skills.map((skill, index) => (
-            <div 
-              key={skill.name} 
-              className={`reveal stagger-${index + 1} flex flex-col items-center group cursor-pointer`}
-            >
-              <div className="icon-glow mb-4 text-foreground">
-                {skill.icon}
+        <div className={skillsClass}>
+          {skills.map((skill, index) => {
+            const hoverAnimations = [
+              "icon-hover-float",
+              "icon-hover-pulse",
+              "icon-hover-wiggle",
+              "icon-hover-float",
+              "icon-hover-pulse",
+            ];
+            return (
+              <div
+                key={skill.name}
+                className={`reveal stagger-${index + 1} flex flex-col items-center group cursor-pointer`}
+              >
+                <div className={`icon-glow mb-4 text-foreground ${hoverAnimations[index]}`}>{skill.icon}</div>
+                <span className="text-sm font-light text-muted-foreground group-hover:text-foreground transition-all duration-300 animated-underline">
+                  {skill.name}
+                </span>
               </div>
-              <span className="text-sm font-light text-muted-foreground group-hover:text-foreground transition-colors">
-                {skill.name}
-              </span>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Three Column Text */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className={textGridClass}>
           {/* Column 1 */}
-          <div className="text-foreground md:text-right reveal-left">
+          <div className={introTextClass}>
             <h3 className="text-xl md:text-2xl font-semibold mb-6 leading-relaxed">
-              Hello, I'm Sattar, an ML & AI Engineer in the making — working with deep learning, computer vision, NLP, and generative AI while exploring agentic systems, RAG architectures, and research-driven approaches to build intelligent, impactful solutions.
+              Hello, I'm Sattar - an ML & AI Engineer in progress.
             </h3>
+            <p className="text-base leading-relaxed text-muted-foreground">
+              I focus on building machine learning, deep learning, and diffusion-based systems, working across
+              computer vision, NLP, and retrieval-augmented generation (RAG) architectures, with a growing interest
+              in agentic and generative AI systems.
+            </p>
           </div>
 
           {/* Column 2 */}
           <div className="text-muted-foreground reveal">
             <h4 className="text-xl md:text-2xl font-semibold mb-6 text-foreground">My Journey</h4>
             <p className="text-base leading-relaxed">
-              I grew up fascinated by how things work — breaking gadgets, opening stuff I wasn't supposed to open, exploring physics videos, and diving into weird facts about the universe. I like figuring out the "why" behind things. That naturally pushed me toward computer science. It's the perfect mix of logic, math, creativity, and problem-solving — and it's where I feel most at home now, especially with ML and AI.
+              I've always been curious about how things work - taking apart gadgets, opening devices I probably
+              shouldn't have, watching physics videos, and exploring strange ideas about the universe. I'm naturally
+              drawn to understanding the "why" behind systems.
+            </p>
+            <p className="text-base leading-relaxed mt-4">
+              That curiosity led me to computer science - a field that blends logic, mathematics, creativity, and
+              structured problem-solving. It's where I feel most aligned today, especially while working on ML/DL
+              systems and building intelligent, scalable products.
             </p>
           </div>
 
@@ -113,7 +135,13 @@ const About = () => {
           <div className="text-muted-foreground reveal-right">
             <h4 className="text-xl md:text-2xl font-semibold mb-6 text-foreground">What Drives Me</h4>
             <p className="text-base leading-relaxed">
-              I'm driven by curiosity — the constant urge to understand more, explore deeper, and push beyond what I already know. Learning new skills and refining the ones I have is something I genuinely enjoy, because every step forward opens up new possibilities. A big part of my motivation also comes from wanting to build a stronger future for myself and for the people who invest their trust in me.
+              Curiosity is my primary driver - the constant need to learn deeper, think more critically, and go
+              beyond surface-level understanding. I enjoy refining my skills as much as acquiring new ones, because
+              every improvement expands what I can build.
+            </p>
+            <p className="text-base leading-relaxed mt-4">
+              Equally important is the desire to create long-term impact - to build meaningful systems, grow steadily,
+              and justify the trust placed in me by the people who support and believe in my journey.
             </p>
           </div>
         </div>

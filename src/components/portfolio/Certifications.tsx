@@ -22,8 +22,8 @@ const Certifications = () => {
       <div className="max-w-6xl w-full px-6 md:px-10">
         {/* Header */}
         <div className="text-center mb-20 reveal">
-          <h2 className="text-5xl md:text-6xl font-semibold mb-8 text-foreground">Certifications</h2>
-          <div className="w-32 h-[2px] bg-foreground mx-auto"></div>
+          <h2 className="text-5xl md:text-6xl font-semibold mb-8 gradient-text">Certifications</h2>
+          <div className="w-32 h-[1px] bg-foreground/30 mx-auto"></div>
         </div>
 
         {/* Certifications Grid */}
@@ -31,7 +31,7 @@ const Certifications = () => {
           {certifications.map((cert, index) => (
             <div
               key={cert.name}
-              className={`reveal stagger-${(index % 5) + 1} group p-6 md:p-8 bg-card border border-border hover:border-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer`}
+              className={`reveal stagger-${(index % 5) + 1} group p-6 md:p-8 bg-card border border-border hover:border-foreground/20 transition-all duration-400 hover:-translate-y-2 hover:shadow-xl dark:hover:shadow-black/25 cursor-pointer glow-card rounded-xl`}
             >
               <div className="flex flex-col h-full">
                 <div className="mb-4">

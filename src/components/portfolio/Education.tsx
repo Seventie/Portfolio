@@ -59,8 +59,8 @@ const Education = () => {
       <div className="max-w-7xl w-full px-6 md:px-10">
         {/* Header */}
         <div className="text-center mb-20 reveal">
-          <h2 className="text-5xl md:text-6xl font-semibold mb-8 text-foreground">Education & Achievements</h2>
-          <div className="w-32 h-[2px] bg-foreground mx-auto"></div>
+          <h2 className="text-5xl md:text-6xl font-semibold mb-8 gradient-text">Education & Achievements</h2>
+          <div className="w-32 h-[1px] bg-foreground/30 mx-auto"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -71,7 +71,7 @@ const Education = () => {
             {academicJourney.map((item, index) => (
               <div
                 key={index}
-                className={`reveal stagger-${index + 1} border-l-2 border-border pl-6 relative py-4 hover:-translate-y-0.5 hover:scale-[1.01] transition-all duration-300 hover:shadow-md`}
+                className={`reveal stagger-${index + 1} border-l-2 border-border pl-6 relative py-4 hover:-translate-y-1 hover:scale-[1.01] transition-all duration-400 hover:shadow-lg dark:hover:shadow-black/20 rounded-r-lg hover:bg-card/30`}
               >
                 <div className={`absolute -left-[9px] top-4 w-4 h-4 rounded-full ${item.highlight ? 'bg-primary' : 'bg-foreground'}`}></div>
                 <p className="text-sm font-light text-muted-foreground mb-2">{item.year}</p>
@@ -91,7 +91,7 @@ const Education = () => {
             {sportsLeadership.map((item, index) => (
               <div
                 key={index}
-                className={`reveal stagger-${index + 1} border-l-2 border-accent/30 pl-6 relative py-4 hover:-translate-y-0.5 hover:scale-[1.01] transition-all duration-300 hover:shadow-md`}
+                className={`reveal stagger-${index + 1} border-l-2 border-accent/30 pl-6 relative py-4 hover:-translate-y-1 hover:scale-[1.01] transition-all duration-400 hover:shadow-lg dark:hover:shadow-black/20 rounded-r-lg hover:bg-card/30`}
               >
                 <div className={`absolute -left-[9px] top-4 w-4 h-4 rounded-full ${item.highlight ? 'bg-accent' : 'bg-foreground'}`}></div>
                 <p className="text-sm text-muted-foreground mb-2">{item.year}</p>
